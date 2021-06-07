@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "notification_services"
+version = "0.1.0"
+description = ""
+authors = ["Lucas <lucassrod@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+sendgrid = "^6.7.0"
+onesignal-sdk = "^2.0.0"
+twilio = "^6.59.1"
+python-dotenv = "^0.17.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.4"
+ipdb = "^0.13.9"
+pytest-cov = "^2.12.1"
+black = "^21.5b2"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
