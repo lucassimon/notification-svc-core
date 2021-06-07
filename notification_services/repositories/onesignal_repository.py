@@ -1,4 +1,4 @@
-from notification_services.backends.core import backend_factory, BaseEmailBackend
+from notification_services.backends.core import backend_factory, BaseNotificationBackend
 from notification_services.backends.onesignal.entity import OneSignalPayloadRequest
 from notification_services.backends.onesignal.config import OneSignalConfig
 
@@ -7,7 +7,10 @@ from .core import NotificationRepositoryInterface
 
 class OneSignalRepository(NotificationRepositoryInterface):
     def __init__(
-        self, config: OneSignalConfig, backend_klass: BaseEmailBackend, connection=None
+        self,
+        config: OneSignalConfig,
+        backend_klass: BaseNotificationBackend,
+        connection=None,
     ):
         self.config = config
         self.connection = connection

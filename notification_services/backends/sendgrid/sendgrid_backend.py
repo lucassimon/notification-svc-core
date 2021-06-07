@@ -2,11 +2,11 @@ from sendgrid import SendGridAPIClient
 
 from python_http_client import exceptions
 
-from notification_services.backends.core import BaseEmailBackend
+from notification_services.backends.core import BaseNotificationBackend
 from .config import SendgridConfig
 
 
-class SendgridBackendV3(BaseEmailBackend):
+class SendgridBackendV3(BaseNotificationBackend):
     def __init__(self, config: SendgridConfig, fail_silently=False):
         super().__init__(fail_silently=fail_silently)
         self.config = config

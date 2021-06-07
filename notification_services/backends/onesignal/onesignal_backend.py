@@ -4,12 +4,12 @@ from onesignal_sdk.client import Client
 from onesignal_sdk.error import OneSignalHTTPError
 
 
-from notification_services.backends.core import BaseEmailBackend
+from notification_services.backends.core import BaseNotificationBackend
 
 from .config import OneSignalConfig
 
 
-class OneSignalBackendV1(BaseEmailBackend):
+class OneSignalBackendV1(BaseNotificationBackend):
     def __init__(self, config: OneSignalConfig, fail_silently=False):
         super().__init__(fail_silently=fail_silently)
         self.config = config

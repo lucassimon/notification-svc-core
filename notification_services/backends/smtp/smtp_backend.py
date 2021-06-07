@@ -1,10 +1,10 @@
 import threading
 
-from notification_services.backends.core import BaseEmailBackend
+from notification_services.backends.core import BaseNotificationBackend
 from .config import SmtpConfig
 
 
-class SmtpBackendV1(BaseEmailBackend):
+class SmtpBackendV1(BaseNotificationBackend):
     def __init__(self, config: SmtpConfig, fail_silently=False):
         super().__init__(fail_silently=fail_silently)
         self.host = config.host

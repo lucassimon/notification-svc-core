@@ -1,4 +1,4 @@
-from notification_services.backends.core import backend_factory, BaseEmailBackend
+from notification_services.backends.core import backend_factory, BaseNotificationBackend
 from notification_services.backends.twilio.entity import TwilioPayloadRequest
 from notification_services.backends.twilio.config import TwilioConfig
 
@@ -7,7 +7,10 @@ from .core import NotificationRepositoryInterface
 
 class SMSTwilioRepository(NotificationRepositoryInterface):
     def __init__(
-        self, config: TwilioConfig, backend_klass: BaseEmailBackend, connection=None
+        self,
+        config: TwilioConfig,
+        backend_klass: BaseNotificationBackend,
+        connection=None,
     ):
         self.config = config
         self.connection = connection

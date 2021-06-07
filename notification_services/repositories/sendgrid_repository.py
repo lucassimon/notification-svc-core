@@ -1,6 +1,6 @@
 from sendgrid.helpers.mail import Mail
 
-from notification_services.backends.core import backend_factory, BaseEmailBackend
+from notification_services.backends.core import backend_factory, BaseNotificationBackend
 from notification_services.backends.sendgrid.config import SendgridConfig
 
 from .core import NotificationRepositoryInterface
@@ -8,7 +8,10 @@ from .core import NotificationRepositoryInterface
 
 class SendgridRepository(NotificationRepositoryInterface):
     def __init__(
-        self, config: SendgridConfig, backend_klass: BaseEmailBackend, connection=None
+        self,
+        config: SendgridConfig,
+        backend_klass: BaseNotificationBackend,
+        connection=None,
     ):
         self.config = config
         self.connection = connection

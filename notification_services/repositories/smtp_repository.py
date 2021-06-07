@@ -1,12 +1,15 @@
 from notification_services.backends.smtp.config import SmtpConfig
-from notification_services.backends.core import backend_factory, BaseEmailBackend
+from notification_services.backends.core import backend_factory, BaseNotificationBackend
 
 from .core import NotificationRepositoryInterface
 
 
 class SmtpRepository(NotificationRepositoryInterface):
     def __init__(
-        self, config: SmtpConfig, backend_klass: BaseEmailBackend, connection=None
+        self,
+        config: SmtpConfig,
+        backend_klass: BaseNotificationBackend,
+        connection=None,
     ):
         self.config = config
         self.connection = connection

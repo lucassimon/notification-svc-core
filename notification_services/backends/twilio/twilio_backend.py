@@ -4,11 +4,11 @@ from twilio.rest import Client
 from twilio.base import exceptions
 
 
-from notification_services.backends.core import BaseEmailBackend
+from notification_services.backends.core import BaseNotificationBackend
 from .config import TwilioConfig
 
 
-class TwilioBackendV1(BaseEmailBackend):
+class TwilioBackendV1(BaseNotificationBackend):
     def __init__(self, config: TwilioConfig, fail_silently=False):
         super().__init__(fail_silently=fail_silently)
         self.config = config
