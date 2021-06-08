@@ -9,6 +9,5 @@ class NotificationRepositoryInterface:
         return hasattr(subclass, "send") and callable(subclass.send) or NotImplemented
 
     @abc.abstractmethod
-    def send(self):
-        """Send email"""
+    def send(self, message):
         raise NotImplementedError

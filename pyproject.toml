@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "notification_services"
+name = "notification-svc-core"
 version = "0.1.0"
 description = ""
 authors = ["Lucas <lucassrod@gmail.com>"]
